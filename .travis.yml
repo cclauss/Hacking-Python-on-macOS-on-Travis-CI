@@ -1,31 +1,38 @@
 # https://docs.travis-ci.com/user/reference/osx
 # https://docs.travis-ci.com/user/languages/python
 
-group: travis_latest
+# group: travis_latest
 os: osx
 osx_image:
   - xcode10.2
   - xcode11.0
-language: generic
+# language: generic
 
-before_install:
-  - sw_vers
-  # - brew upgrade python swiftlint
-  - pip3 install --upgrade pip || true
-  - python3 -m pip install --upgrade pip || true
-  - python3.7 -m pip install --upgrade pip || true
-install:
-  # - python3.7 -m pip install -r requirements.txt
-  - pip3 install flake8
-
-before_script:
-  - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-  - flake8 . --count --max-complexity=10 --max-line-length=127 --show-source --statistics
+# before_install:
 script:
-  - python -c "import sys ; print(sys.version)" || true
-  - python3 -c "import sys ; print(sys.version)" || true
-  - python2 -c "import sys ; print(sys.version)" || true
+  - sw_vers
+  - python3 --version
+  - pip3 --version
+  - python2 --version
+  - pip2 --version
+  - python --version
+  - pip --version
+  # - brew upgrade python swiftlint
+  #- pip3 install --upgrade pip || true
+  #- python3 -m pip install --upgrade pip || true
+  #- python3.7 -m pip install --upgrade pip || true
+#install:
+  # - python3.7 -m pip install -r requirements.txt
+#  - pip3 install flake8
 
-notifications:
-  on_success: change
-  on_failure: change  # `always` will be the setting once code changes slow down
+#before_script:
+#  - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+#  - flake8 . --count --max-complexity=10 --max-line-length=127 --show-source --statistics
+#script:
+#  - python -c "import sys ; print(sys.version)" || true
+#  - python3 -c "import sys ; print(sys.version)" || true
+#  - python2 -c "import sys ; print(sys.version)" || true
+
+#notifications:
+#  on_success: change
+#  on_failure: change  # `always` will be the setting once code changes slow down
