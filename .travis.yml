@@ -6,15 +6,17 @@ os: osx
 osx_image:
   - xcode10.2
   - xcode11.0
-language: objective-c
+language: generic
 
 before_install:
   - sw_vers
   # - brew upgrade python swiftlint
-  - python3.7 -m pip install --upgrade pip
+  - pip3 install --upgrade pip || true
+  - python3 -m pip install --upgrade pip || true
+  - python3.7 -m pip install --upgrade pip || true
 install:
   # - python3.7 -m pip install -r requirements.txt
-  - python3.7 -m pip install flake8
+  - pip3 install flake8
 
 before_script:
   - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
