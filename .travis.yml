@@ -6,6 +6,8 @@ os: osx
 osx_image:
   - xcode10.2
   - xcode11
+  - xcode11.1
+  - xcode11.2
 # language: generic
 
 # before_install:
