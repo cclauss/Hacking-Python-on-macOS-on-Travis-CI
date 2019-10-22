@@ -20,7 +20,8 @@ script:
   - python --version
   - pip --version
   - pyenv install --list
-  - HOMEBREW_NO_AUTO_UPDATE=1 brew install npm
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade npm || true
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew reinstall npm
   # - brew upgrade python swiftlint
   #- pip3 install --upgrade pip || true
   #- python3 -m pip install --upgrade pip || true
